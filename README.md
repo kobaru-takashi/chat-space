@@ -28,7 +28,6 @@
 |------|----|-------|
 |name|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :messages
 - has_many :groups_users
@@ -38,6 +37,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
