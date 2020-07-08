@@ -15,11 +15,13 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
-|message|text|null: false, foreign_key: true|
+|message|text||
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
 ### Association
 - belongs_to :user
-- belongs_to :groups
+- belongs_to :group
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -36,8 +38,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
