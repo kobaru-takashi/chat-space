@@ -1,0 +1,25 @@
+.main-chat
+  .message-group
+    .group-left
+      .group-name kobaru
+      .group-user 
+        .member-name Member : 
+        .user-name aya 121111
+    = link_to "Edit", "#" ,class: "group-btn"
+
+  .message-list
+    .list
+      .message-user-name
+        .message-name aya
+        .posting-time 2020年7月11日10時50分
+      .message-comment おはよう
+
+  .message-form
+    .form
+      %form
+        .input-box
+          %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+          %label{class: "input-box__image"}
+            = icon('fas', 'image')
+            %input{type: "file", class: "input-box__image__file"}
+        %input{type: "submit", value: "Send", class: "submit-btn"}
