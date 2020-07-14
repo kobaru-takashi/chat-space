@@ -2,24 +2,25 @@
   .message-group
     .group-left
       .group-name 
-      .group-user 
-        .member-name
+        = @group.name
+      .group-user  
+        .member-name Member :
         .user-name
-    = link_to "Edit", "#" ,class: "group-btn"
+          - @group.users.each do |user|
+            = user.name
+    = link_to "Edit", edit_group_path(@group), class: "group-btn"
 
   .message-list
-    .list
-      .message-user-name
-        .message-name
-        .posting-time
-      .message-comment
+    = render @messages
 
   .message-form
-    .form
-      %form
+    .form-group
+      = form_with model: [@group, @message], html: {class: 'form'}, local: true do |f|
         .input-box
-          %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-          %label{class: "input-box__image"}
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__image' do
             = icon('fas', 'image')
-            %input{type: "file", class: "input-box__image__file"}
-        %input{type: "submit", value: "Send", class: "submit-btn"}
+            = f.file_field :image, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'
+
+
