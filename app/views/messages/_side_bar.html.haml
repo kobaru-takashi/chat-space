@@ -4,12 +4,16 @@
       .list-left
         = current_user.name
       .list-right
-        = link_to "#", class: "icon-left" do
+        = link_to new_group_path, class: "icon-left" do
           = icon('fas', 'edit')
         = link_to edit_user_path(current_user), class: "icon-right" do
           = icon('fas', 'cog')
 
   .group-list
-    .group-table
-      .table-name tech camp
-      .table-message まだメッセージはありません
+    - current_user.groups.each do |group|
+      .group-table
+        = link_to '#' do
+          .table-name
+            = group.name
+          .table-message
+            メッセージはまだありません
