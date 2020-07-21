@@ -41,6 +41,8 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 0 20px;
+    overflow-x: scroll;
+    overflow-y: scroll;
     .group-table{
       padding: 20px 0px 40px 0px;
       a{
@@ -102,6 +104,8 @@
     background-color: #fafafa;
     height: calc(100vh - 100px - 90px);
     padding: 35px 40px 0 40px;
+    overflow-x: scroll;
+    overflow-y: scroll;
     .list{
       margin-bottom: 46px;
       .message-user-name{
