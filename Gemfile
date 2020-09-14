@@ -76,3 +76,4 @@ group :production do
 end
 
 gem 'fog-aws'
+gem "actionview", ">= 6.0.3.3"
